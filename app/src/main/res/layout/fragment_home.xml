@@ -83,7 +83,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </FrameLayout>
 
     <FrameLayout
@@ -99,15 +98,19 @@
 
     </FrameLayout>
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/classes_container"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:background="@color/app_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exam_countdown_container"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        >
+
+        <include layout="@layout/fragment_classes"/>
+
+    </FrameLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/homework_container"

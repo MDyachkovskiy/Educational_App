@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="@color/app_background"
+    app:cardCornerRadius="35dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/margin_40dp_large"
+        >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/class_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="@dimen/margin_40dp_large"
+            app:layout_constraintDimensionRatio="1:1"
+            app:cardCornerRadius="35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/user_avatar_image"
+                android:layout_margin="@dimen/margin_10dp_small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_icon"
+                tools:ignore="ContentDescription" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/class_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/classes_hint"
+            style="@style/ClassesItemTitleStyle"
+            app:layout_constraintTop_toTopOf="@id/class_icon"
+            app:layout_constraintStart_toEndOf="@id/class_icon"
+            android:layout_marginStart="@dimen/margin_16dp_medium"
+            />
+
+        <TextView
+            android:id="@+id/class_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16dp_medium"
+            android:text="@string/classes_time_hint"
+            android:drawablePadding="4dp"
+            style="@style/ClassesItemTimeStyle"
+            app:layout_constraintTop_toBottomOf="@id/class_name"
+            app:layout_constraintStart_toEndOf="@id/class_icon"
+            android:layout_marginStart="@dimen/margin_16dp_medium"
+            app:drawableLeftCompat="@drawable/ic_time"
+            app:drawableTint="@color/item_classes_time_color" />
+
+        <gb.com.educational_app.view.customView.VerticalTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/ClassesItemTitleStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/skype_button_color"
+            android:text="Open in Skype"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
