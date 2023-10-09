@@ -6,4 +6,17 @@
     <string name="bot_nav_classes">Classes</string>
     <string name="bot_nav_progress">Progress</string>
     <string name="bot_nav_favorite">Favorites</string>
+
+    //HomeFragment
+    <string name="greeting_text">Hi, Mike!</string>
+
+    //ExamCountdown
+    <string name="countdown_title">Are you ready for exams?</string>
+    <string name="countdown_days">Days</string>
+    <string name="countdown_hours">Hours</string>
+    <string name="countdown_minutes">Minutes</string>
+    <string name="timer_hint">0</string>
+    <string name="timer_dots">:</string>
+
+
 </resources>

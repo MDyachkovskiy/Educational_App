@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="app_background">#191818</color>
     <color name="avatar_background">#0EC9CE</color>
+    <color name="countdown_timer_transparent_background">#1A6A6060</color>
 </resources>
