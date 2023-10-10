@@ -11,7 +11,10 @@
     <string name="greeting_text">Hi, Mike!</string>
     <string name="classes_hint">History</string>
     <string name="classes_time_hint">8:00–8:45</string>
+    <string name="remain_time_hint">2 days left</string>
+    <string name="homework_description_hint">Read scenes 1.1–1.12 of The Master and Margarita</string>
     <string name="classes_block_title">Classes</string>
+    <string name="homework_block_title">Homework</string>
     <string name="classes_count_hint">6 classes today</string>
 
     //ExamCountdown

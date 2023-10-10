@@ -30,6 +30,7 @@
     //Home Fragment
     <dimen name="toolbar_icon_height">30dp</dimen>
     <dimen name="toolbar_avatar_icon_height">50dp</dimen>
+    <dimen name="homework_item_width">270dp</dimen>
 
     //Countdown
     <dimen name="clock_window_height">50dp</dimen>

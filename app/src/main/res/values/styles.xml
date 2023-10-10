@@ -44,4 +44,16 @@
         <item name="android:font">@font/amiko</item>
     </style>
 
+    <style name="RedColorAttentionTextStyle">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/attention_red_color_text</item>
+        <item name="android:font">@font/amiko</item>
+    </style>
+
+    <style name="HomeworkDescriptionStyle">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:font">@font/amiko</item>
+    </style>
+
 </resources>
