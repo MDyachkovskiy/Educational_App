@@ -16,6 +16,8 @@
     <string name="classes_block_title">Classes</string>
     <string name="homework_block_title">Homework</string>
     <string name="classes_count_hint">6 classes today</string>
+    <string name="classes_teacher">Teacher:</string>
+    <string name="classes_teacher_hint">Mrs. Barros</string>
 
     //ExamCountdown
     <string name="countdown_title">Are you ready for exams?</string>

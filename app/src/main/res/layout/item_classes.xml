@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_background">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_16dp_medium"
+        android:layout_marginEnd="@dimen/margin_20dp_medium"
+        app:cardBackgroundColor="@color/app_secondary_color"
+        app:cardCornerRadius="@dimen/material_card_corner_radius_35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/classes_time"
+        app:layout_constraintTop_toBottomOf="@id/outer_circle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/margin_26dp_medium">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/class_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/margin_32dp_large"
+                app:cardCornerRadius="@dimen/material_card_corner_radius_35dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/classes_icon_transparent_background">
+
+                    <ImageView
+                        android:id="@+id/user_avatar_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:layout_margin="@dimen/margin_10dp_small"
+                        android:src="@drawable/ic_physic_class"
+                        tools:ignore="ContentDescription" />
+
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/class_name"
+                style="@style/ClassesItemTitleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp_medium"
+                android:text="@string/classes_hint"
+                app:layout_constraintStart_toEndOf="@id/class_icon"
+                app:layout_constraintTop_toTopOf="@id/class_icon" />
+
+            <TextView
+                android:id="@+id/teacher_title"
+                style="@style/ClassesItemTimeStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp_medium"
+                android:layout_marginTop="@dimen/margin_16dp_medium"
+                android:text="@string/classes_teacher"
+                app:layout_constraintBottom_toBottomOf="@id/class_icon"
+                app:layout_constraintStart_toEndOf="@id/class_icon" />
+
+            <TextView
+                android:id="@+id/teacher_name"
+                style="@style/ClassesItemTimeStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10dp_small"
+                android:text="@string/classes_teacher_hint"
+                app:layout_constraintBottom_toBottomOf="@id/teacher_title"
+                app:layout_constraintStart_toEndOf="@id/teacher_title" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/classes_time"
+        style="@style/ClassesItemTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20dp_medium"
+        android:text="@string/classes_time_hint"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
+        app:layout_constraintStart_toEndOf="@id/inner_circle"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal" />
+
+    <View
+        android:id="@+id/outer_circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_16dp_medium"
+        android:background="@drawable/outer_circle_shape"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal" />
+
+    <View
+        android:id="@+id/inner_circle"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:background="@drawable/inner_circle_shape"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/outer_circle"
+        app:layout_constraintEnd_toEndOf="@id/outer_circle"
+        app:layout_constraintStart_toStartOf="@id/outer_circle"
+        app:layout_constraintTop_toTopOf="@id/outer_circle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/inner_circle"
+        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintStart_toStartOf="@id/inner_circle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <View
+        android:id="@+id/bottom_line"
+        android:layout_width="@dimen/margin_2dp_small"
+        android:layout_height="0dp"
+        android:background="@drawable/background_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/inner_circle" />
+
+    <View
+        android:id="@+id/upper_line"
+        android:layout_width="@dimen/margin_2dp_small"
+        android:layout_height="0dp"
+        android:background="@drawable/background_gradient"
+        app:layout_constraintBottom_toTopOf="@id/inner_circle"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,5 +9,6 @@
     <color name="item_classes_time_color">#898E8E</color>
     <color name="attention_red_color_text">#B12A46</color>
     <color name="skype_button_color">#4ECFF7</color>
+    <color name="classes_icon_transparent_background">#1AFFFFFF</color>
 
 </resources>

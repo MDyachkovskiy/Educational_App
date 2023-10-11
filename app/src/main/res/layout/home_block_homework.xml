@@ -15,14 +15,14 @@
         android:text="@string/homework_block_title"
         style="@style/ClassesItemTitleStyle"
         android:layout_marginTop="@dimen/margin_8dp_small"
-        android:layout_marginStart="@dimen/margin_16dp_medium"
+        android:layout_marginStart="@dimen/margin_32dp_large"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginVertical="@dimen/margin_16dp_medium"
+        android:layout_marginVertical="@dimen/margin_20dp_medium"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/homework_block_title"
         app:layout_constraintStart_toStartOf="@id/homework_block_title"
