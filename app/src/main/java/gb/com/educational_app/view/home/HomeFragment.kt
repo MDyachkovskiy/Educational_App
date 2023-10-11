@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import gb.com.educational_app.R
 import gb.com.educational_app.databinding.FragmentHomeBinding
 import gb.com.educational_app.model.datasource.Classes
 import gb.com.educational_app.model.datasource.ExamTime
@@ -43,8 +44,11 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun initClassesRecyclerView(classes: List<Classes>?) {
-
+    private fun initClassesRecyclerView(classes: List<Classes>) {
+        binding.classes.classesCount.text = getString(R.string.classes_count, classes.size)
+        val adapter = ClassesAdapter()
+        adapter.classesList = classes
+        binding.classes.classesRecyclerView.adapter = adapter
     }
 
     private fun initCountdownBlock(examTime: ExamTime?) {

@@ -110,7 +110,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         >
 
-        <include layout="@layout/home_block_classes"/>
+        <include
+            android:id="@+id/classes"
+            layout="@layout/home_block_classes"/>
 
     </FrameLayout>
 
