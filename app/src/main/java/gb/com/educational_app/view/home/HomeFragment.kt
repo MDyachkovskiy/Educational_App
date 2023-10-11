@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import gb.com.educational_app.databinding.FragmentHomeBinding
+import gb.com.educational_app.model.datasource.Classes
 import gb.com.educational_app.model.datasource.ExamTime
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Calendar
@@ -30,12 +31,20 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.getExamTime()
+        viewModel.loadClasses()
     }
 
     private fun initObservers() {
         viewModel.examTime.observe(viewLifecycleOwner) { examTime ->
             initCountdownBlock(examTime)
         }
+        viewModel.classes.observe(viewLifecycleOwner) {classes ->
+            initClassesRecyclerView(classes)
+        }
+    }
+
+    private fun initClassesRecyclerView(classes: List<Classes>?) {
+
     }
 
     private fun initCountdownBlock(examTime: ExamTime?) {
