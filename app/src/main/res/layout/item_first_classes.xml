@@ -30,7 +30,6 @@
                 android:layout_marginStart="@dimen/margin_32dp_large"
                 app:cardBackgroundColor="@android:color/transparent"
                 app:cardCornerRadius="@dimen/material_card_corner_radius_35dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -83,6 +82,19 @@
                 android:text="@string/classes_teacher_hint"
                 app:layout_constraintBottom_toBottomOf="@id/teacher_title"
                 app:layout_constraintStart_toEndOf="@id/teacher_title" />
+
+            <TextView
+                android:id="@+id/classes_description"
+                style="@style/ClassesItemTimeStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_10dp_small"
+                android:layout_marginEnd="@dimen/margin_32dp_large"
+                app:layout_constraintTop_toBottomOf="@id/class_icon"
+                app:layout_constraintStart_toStartOf="@id/class_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,6 +1,7 @@
 package gb.com.educational_app.view.classes
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -28,8 +29,8 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
         return when(position) {
             0 -> VIEW_TYPE_FIRST
-            classesList.size - 1 -> VIEW_TYPE_MIDDLE
-            else -> VIEW_TYPE_LAST
+            classesList.size - 1 -> VIEW_TYPE_LAST
+            else -> VIEW_TYPE_MIDDLE
         }
     }
 
@@ -38,7 +39,9 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(classes: Classes, adapter: ClassesFragmentAdapter) {
             adapter.bindGeneralInfo(
-                binding.className, binding.teacherName, binding.classIconImage, classes
+                binding.className, binding.teacherName,
+                binding.classIconImage, binding.classesTime, binding.classesDescription,
+                classes
             )
         }
     }
@@ -48,7 +51,9 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(classes: Classes, adapter: ClassesFragmentAdapter) {
             adapter.bindGeneralInfo(
-                binding.className, binding.teacherName, binding.classIconImage, classes
+                binding.className, binding.teacherName,
+                binding.classIconImage, binding.classesTime, binding.classesDescription,
+                classes
             )
         }
     }
@@ -58,7 +63,9 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(classes: Classes, adapter: ClassesFragmentAdapter) {
             adapter.bindGeneralInfo(
-                binding.className, binding.teacherName, binding.classIconImage, classes
+                binding.className, binding.teacherName,
+                binding.classIconImage, binding.classesTime, binding.classesDescription,
+                classes
             )
         }
     }
@@ -67,11 +74,20 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         classNameTextView: TextView,
         teacherNameTextView: TextView,
         classIconImageView: ImageView,
+        classesTime: TextView,
+        classesDescription: TextView,
         classes: Classes
     ) {
         classNameTextView.text = classes.className
         teacherNameTextView.text = classes.teacher
+        classesTime.text = classes.classTime
         classIconImageView.setImageResource(getIconBasedOnClassName(classes.className))
+
+        if (classes.comments.isNullOrEmpty()) {
+            classesDescription.visibility = View.INVISIBLE
+        } else {
+            classesDescription.text = classes.comments
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
