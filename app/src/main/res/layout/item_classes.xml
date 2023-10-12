@@ -12,11 +12,20 @@
         android:layout_marginVertical="@dimen/margin_16dp_medium"
         android:layout_marginEnd="@dimen/margin_20dp_medium"
         app:cardBackgroundColor="@color/app_secondary_color"
+        android:background="@drawable/background_gradient"
         app:cardCornerRadius="@dimen/material_card_corner_radius_35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/classes_time"
-        app:layout_constraintTop_toBottomOf="@id/outer_circle">
+        app:layout_constraintTop_toBottomOf="@id/inner_circle">
+
+        <FrameLayout
+            android:id="@+id/gradient_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_gradient"
+            android:visibility="gone">
+        </FrameLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -112,27 +121,17 @@
         app:layout_constraintStart_toEndOf="@id/inner_circle"
         app:layout_constraintTop_toTopOf="@id/guideline_horizontal" />
 
-    <View
-        android:id="@+id/outer_circle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="@dimen/margin_16dp_medium"
-        android:background="@drawable/outer_circle_shape"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
-        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
-        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal" />
+
 
     <View
         android:id="@+id/inner_circle"
         android:layout_width="14dp"
         android:layout_height="14dp"
         android:background="@drawable/inner_circle_shape"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/outer_circle"
-        app:layout_constraintEnd_toEndOf="@id/outer_circle"
-        app:layout_constraintStart_toStartOf="@id/outer_circle"
-        app:layout_constraintTop_toTopOf="@id/outer_circle" />
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_vertical"

@@ -15,7 +15,8 @@ object ClassesMockData {
             "10.00-11.35",
             "Mr. Barros",
             "Intense preparation for The Junior World Championship in Los Angeles",
-            false),
+            false, isFacultative = true
+        ),
         Classes(
             "Chemistry",
         "12.00-12.45",
@@ -29,7 +30,7 @@ object ClassesMockData {
             "13.00-13.45",
             "Mr. Einstein",
             "Today's lecture theme hint: It's all relative",
-            true
+            true, isFacultative = true
         ),
         Classes(
             "Math",

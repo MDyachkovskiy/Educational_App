@@ -3,9 +3,12 @@ package gb.com.educational_app.view.classes
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import gb.com.educational_app.R
 import gb.com.educational_app.databinding.ItemClassesBinding
 import gb.com.educational_app.databinding.ItemFirstClassesBinding
 import gb.com.educational_app.databinding.ItemLastClassesBinding
@@ -41,7 +44,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             adapter.bindGeneralInfo(
                 binding.className, binding.teacherName,
                 binding.classIconImage, binding.classesTime, binding.classesDescription,
-                classes
+                binding.gradientBackground, itemView, binding.teacherTitle, classes
             )
         }
     }
@@ -53,7 +56,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             adapter.bindGeneralInfo(
                 binding.className, binding.teacherName,
                 binding.classIconImage, binding.classesTime, binding.classesDescription,
-                classes
+                binding.gradientBackground, itemView, binding.teacherTitle, classes
             )
         }
     }
@@ -65,7 +68,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             adapter.bindGeneralInfo(
                 binding.className, binding.teacherName,
                 binding.classIconImage, binding.classesTime, binding.classesDescription,
-                classes
+                binding.gradientBackground, itemView, binding.teacherTitle, classes
             )
         }
     }
@@ -76,6 +79,9 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         classIconImageView: ImageView,
         classesTime: TextView,
         classesDescription: TextView,
+        gradientBackground: FrameLayout,
+        itemView: View,
+        teacherTitleTextView: TextView,
         classes: Classes
     ) {
         classNameTextView.text = classes.className
@@ -87,6 +93,25 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             classesDescription.visibility = View.INVISIBLE
         } else {
             classesDescription.text = classes.comments
+        }
+
+        updateUiForFacultativeClass(
+            classes.isFacultative, gradientBackground, itemView,
+            teacherTitleTextView, teacherNameTextView, classesDescription
+        )
+    }
+
+    private fun updateUiForFacultativeClass(
+        isFacultative: Boolean,
+        gradientBackground: FrameLayout,
+        itemView: View,
+        vararg textViews: TextView
+    ) {
+        if (isFacultative) {
+            gradientBackground.visibility = View.VISIBLE
+
+            val color = ContextCompat.getColor(itemView.context, R.color.white)
+            textViews.forEach { it.setTextColor(color) }
         }
     }
 

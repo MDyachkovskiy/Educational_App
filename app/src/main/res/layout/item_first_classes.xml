@@ -18,6 +18,14 @@
         app:layout_constraintStart_toStartOf="@id/classes_time"
         app:layout_constraintTop_toBottomOf="@id/outer_circle">
 
+        <FrameLayout
+            android:id="@+id/gradient_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_gradient"
+            android:visibility="gone">
+        </FrameLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -5,5 +5,6 @@ data class Classes(
     val classTime: String,
     val teacher: String,
     val comments: String?,
-    val isOnline: Boolean = false
+    val isOnline: Boolean = false,
+    val isFacultative: Boolean = false
 )
