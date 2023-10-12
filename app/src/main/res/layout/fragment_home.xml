@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
-        android:orientation="vertical"
         android:background="@color/app_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -88,7 +87,7 @@
     <FrameLayout
         android:id="@+id/exam_countdown_container"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/exam_countdown_timer_height"
         android:background="@color/app_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_toolbar"
@@ -126,7 +125,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <include layout="@layout/home_block_homework"/>
+        <include
+            android:id="@+id/homeworks"
+            layout="@layout/home_block_homework"/>
 
     </FrameLayout>
 

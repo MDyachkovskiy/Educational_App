@@ -3,9 +3,9 @@ package gb.com.educational_app.view.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import gb.com.educational_app.R
 import gb.com.educational_app.databinding.ItemHomeClassesBinding
 import gb.com.educational_app.model.datasource.Classes
+import gb.com.educational_app.utils.getIconBasedOnClassName
 
 class ClassesAdapter : RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() {
 
@@ -23,18 +23,6 @@ class ClassesAdapter : RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() 
                 className.text = classes.className
                 classTime.text = classes.classTime
                 iconImage.setImageResource(getIconBasedOnClassName(classes.className))
-            }
-        }
-
-        private fun getIconBasedOnClassName(className: String): Int {
-            return when(className) {
-                "Math" -> R.drawable.ic_math_class
-                "Physics" -> R.drawable.ic_physic_class
-                "Chemistry" -> R.drawable.ic_chemistry_class
-                "History" -> R.drawable.ic_history_class
-                "Literature" -> R.drawable.ic_literature_class
-                "Physical Education" -> R.drawable.ic_physical_education_class
-                else -> R.drawable.ic_math_class
             }
         }
     }

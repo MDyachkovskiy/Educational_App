@@ -2,26 +2,26 @@
 <resources>
 
     <style name="HomeFragmentTitleStyle">
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">23sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:font">@font/amiko</item>
     </style>
 
     <style name="CountdownTitleStyle">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:font">@font/amiko</item>
     </style>
 
     <style name="CountdownDotsStyle">
-        <item name="android:textSize">48sp</item>
+        <item name="android:textSize">46sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:font">@font/amiko</item>
     </style>
 
     <style name="CountdownNumberStyle">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:font">@font/amiko</item>
     </style>
@@ -32,26 +32,26 @@
     </style>
 
     <style name="ClassesItemTitleStyle">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:font">@font/amiko</item>
     </style>
 
     <style name="ClassesItemTimeStyle">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/item_classes_time_color</item>
         <item name="android:font">@font/amiko</item>
     </style>
 
     <style name="RedColorAttentionTextStyle">
-        <item name="android:textSize">17sp</item>
-        <item name="android:textColor">@color/attention_red_color_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:font">@font/amiko</item>
     </style>
 
     <style name="HomeworkDescriptionStyle">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:font">@font/amiko</item>
     </style>

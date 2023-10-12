@@ -10,6 +10,7 @@ import gb.com.educational_app.R
 import gb.com.educational_app.databinding.FragmentHomeBinding
 import gb.com.educational_app.model.datasource.Classes
 import gb.com.educational_app.model.datasource.ExamTime
+import gb.com.educational_app.model.datasource.Homework
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Calendar
 
@@ -31,8 +32,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getExamTime()
-        viewModel.loadClasses()
+        viewModel.loadData()
     }
 
     private fun initObservers() {
@@ -42,6 +42,16 @@ class HomeFragment : Fragment() {
         viewModel.classes.observe(viewLifecycleOwner) {classes ->
             initClassesRecyclerView(classes)
         }
+        viewModel.homework.observe(viewLifecycleOwner) { homeworks ->
+            initHomeworksRecyclerView(homeworks)
+        }
+    }
+
+    private fun initHomeworksRecyclerView(homeworks: List<Homework>) {
+        val adapter = HomeworksAdapter()
+        adapter.homeworkList = homeworks
+        binding.homeworks.homeworkRecyclerView
+        binding.homeworks.homeworkRecyclerView.adapter = adapter
     }
 
     private fun initClassesRecyclerView(classes: List<Classes>) {
