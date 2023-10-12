@@ -75,6 +75,7 @@
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/classes_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/app_background"

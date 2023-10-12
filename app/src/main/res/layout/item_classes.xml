@@ -21,7 +21,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginVertical="@dimen/margin_26dp_medium">
+            android:layout_marginVertical="@dimen/margin_20dp_medium">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/class_icon"
@@ -41,7 +41,7 @@
                     android:background="@color/classes_icon_transparent_background">
 
                     <ImageView
-                        android:id="@+id/user_avatar_image"
+                        android:id="@+id/class_icon_image"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
@@ -83,6 +83,20 @@
                 android:text="@string/classes_teacher_hint"
                 app:layout_constraintBottom_toBottomOf="@id/teacher_title"
                 app:layout_constraintStart_toEndOf="@id/teacher_title" />
+
+            <TextView
+                android:id="@+id/classes_description"
+                style="@style/ClassesItemTimeStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_10dp_small"
+                android:layout_marginEnd="@dimen/margin_32dp_large"
+                android:text="@string/classes_teacher_hint"
+                app:layout_constraintTop_toBottomOf="@id/class_icon"
+                app:layout_constraintStart_toStartOf="@id/class_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
