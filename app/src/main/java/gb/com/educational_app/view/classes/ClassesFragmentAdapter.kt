@@ -47,7 +47,8 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 binding.className, binding.teacherName,
                 binding.classIconImage, binding.classesTime, binding.classesDescription,
                 binding.gradientBackground, itemView, binding.outerCircle,
-                binding.innerCircle, binding.teacherTitle, classes, isCurrentClass
+                binding.innerCircle, binding.teacherTitle, binding.skypeBtnBackground,
+                binding.skypeBtnText, classes, isCurrentClass
             )
         }
     }
@@ -60,7 +61,8 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 binding.className, binding.teacherName,
                 binding.classIconImage, binding.classesTime, binding.classesDescription,
                 binding.gradientBackground, itemView, binding.outerCircle,
-                binding.innerCircle, binding.teacherTitle, classes, isCurrentClass
+                binding.innerCircle, binding.teacherTitle, binding.skypeBtnBackground,
+                binding.skypeBtnText, classes, isCurrentClass
             )
         }
     }
@@ -73,7 +75,8 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 binding.className, binding.teacherName,
                 binding.classIconImage, binding.classesTime, binding.classesDescription,
                 binding.gradientBackground, itemView, binding.outerCircle,
-                binding.innerCircle, binding.teacherTitle, classes, isCurrentClass
+                binding.innerCircle, binding.teacherTitle, binding.skypeBtnBackground,
+                binding.skypeBtnText, classes, isCurrentClass
             )
         }
     }
@@ -89,6 +92,8 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         outerCircle: View,
         innerCircle:View,
         teacherTitleTextView: TextView,
+        skypeBtnBackground: View,
+        skypeText: TextView,
         classes: Classes,
         isCurrentClass: Boolean
     ) {
@@ -98,6 +103,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         classIconImageView.setImageResource(getIconBasedOnClassName(classes.className))
 
         handleUiDesign(outerCircle, innerCircle, isCurrentClass, itemView)
+        handleSkypeButton(skypeBtnBackground, skypeText, classes)
 
         if (classes.comments.isNullOrEmpty()) {
             classesDescription.visibility = View.GONE
@@ -110,6 +116,16 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             classes.isFacultative, gradientBackground, itemView,
             teacherTitleTextView, teacherNameTextView, classesDescription
         )
+    }
+
+    private fun handleSkypeButton(skypeBtnBackground: View, skypeText: TextView, classes: Classes) {
+        if(classes.isOnline) {
+            skypeBtnBackground.visibility = View.VISIBLE
+            skypeText.visibility = View.VISIBLE
+        } else {
+            skypeBtnBackground.visibility = View.GONE
+            skypeText.visibility = View.GONE
+        }
     }
 
     private fun handleUiDesign(

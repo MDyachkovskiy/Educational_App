@@ -125,7 +125,7 @@
                     style="@style/ClassesItemTimeStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_10dp_small"
+                    android:layout_marginStart="@dimen/margin_6dp_small"
                     android:text="@string/classes_teacher_hint"
                     app:layout_constraintBottom_toBottomOf="@id/teacher_title"
                     app:layout_constraintStart_toEndOf="@id/teacher_title" />
@@ -139,9 +139,16 @@
                     android:layout_marginEnd="@dimen/margin_32dp_large"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_skype_btn"
                     app:layout_constraintStart_toStartOf="@id/class_icon"
                     app:layout_constraintTop_toBottomOf="@id/class_icon" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_skype_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.8"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
