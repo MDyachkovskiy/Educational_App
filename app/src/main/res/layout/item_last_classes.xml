@@ -35,8 +35,8 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/class_icon"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/classes_icon_height"
+                android:layout_height="@dimen/classes_icon_height"
                 android:layout_marginStart="@dimen/margin_32dp_large"
                 app:layout_constraintDimensionRatio="1:1"
                 app:cardCornerRadius="@dimen/material_card_corner_radius_35dp"
@@ -104,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/margin_10dp_small"
                 android:layout_marginEnd="@dimen/margin_32dp_large"
+                android:visibility="gone"
                 app:layout_constraintTop_toBottomOf="@id/class_icon"
                 app:layout_constraintStart_toStartOf="@id/class_icon"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -137,13 +138,13 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
         app:layout_constraintTop_toTopOf="@id/guideline_horizontal"
         app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
+        android:visibility="gone"
         />
 
     <View
         android:id="@+id/inner_circle"
         android:layout_width="14dp"
         android:layout_height="14dp"
-        android:backgroundTint="@color/white"
         android:background="@drawable/inner_circle_shape"
         app:layout_constraintStart_toStartOf="@id/outer_circle"
         app:layout_constraintTop_toTopOf="@id/outer_circle"

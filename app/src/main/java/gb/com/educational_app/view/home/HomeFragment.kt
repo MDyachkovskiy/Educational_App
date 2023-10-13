@@ -11,6 +11,7 @@ import gb.com.educational_app.databinding.FragmentHomeBinding
 import gb.com.educational_app.model.datasource.Classes
 import gb.com.educational_app.model.datasource.ExamTime
 import gb.com.educational_app.model.datasource.Homework
+import gb.com.educational_app.utils.findCurrentClassPosition
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Calendar
 
@@ -59,6 +60,10 @@ class HomeFragment : Fragment() {
         val adapter = ClassesAdapter()
         adapter.classesList = classes
         binding.classes.classesRecyclerView.adapter = adapter
+        val position = findCurrentClassPosition(classes)
+        if (position != -1) {
+            binding.classes.classesRecyclerView.scrollToPosition(position)
+        }
     }
 
     private fun initCountdownBlock(examTime: ExamTime?) {

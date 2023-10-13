@@ -17,8 +17,8 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/class_icon"
-            android:layout_width="@dimen/homework_icon_height"
-            android:layout_height="@dimen/homework_icon_height"
+            android:layout_width="@dimen/home_classes_icon_height"
+            android:layout_height="@dimen/home_classes_icon_height"
             android:layout_marginEnd="@dimen/margin_32dp_large"
             app:layout_constraintDimensionRatio="1:1"
             app:cardCornerRadius="@dimen/material_card_corner_radius_35dp"
