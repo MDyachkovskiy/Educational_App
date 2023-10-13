@@ -56,4 +56,10 @@
         <item name="android:font">@font/amiko</item>
     </style>
 
+    <style name="SkypeButtonStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:font">@font/amiko</item>
+    </style>
+
 </resources>

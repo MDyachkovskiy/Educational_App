@@ -28,6 +28,7 @@
     <string name="countdown_minutes">Minutes</string>
     <string name="timer_hint">0</string>
     <string name="timer_dots">:</string>
+    <string name="skype_button">Open in</string>
 
 
 </resources>

@@ -1,73 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginEnd="@dimen/margin_16dp_medium"
     app:cardBackgroundColor="@color/app_secondary_color"
     app:cardCornerRadius="35dp"
-    android:layout_marginEnd="@dimen/margin_16dp_medium"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginVertical="@dimen/margin_20dp_medium"
-        >
+        android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/class_icon"
-            android:layout_width="@dimen/home_classes_icon_height"
-            android:layout_height="@dimen/home_classes_icon_height"
-            android:layout_marginStart="@dimen/margin_40dp_large"
-            app:layout_constraintDimensionRatio="1:1"
-            app:cardCornerRadius="35dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="@dimen/margin_30dp_large"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:cardBackgroundColor="@android:color/transparent"
-            >
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/classes_icon_transparent_background">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/class_icon"
+                android:layout_width="@dimen/home_classes_icon_height"
+                android:layout_height="@dimen/home_classes_icon_height"
+                android:layout_marginStart="@dimen/margin_40dp_large"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="35dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/icon_image"
-                    android:layout_margin="@dimen/margin_10dp_small"
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_physic_class"
-                    tools:ignore="ContentDescription" />
+                    android:background="@color/classes_icon_transparent_background">
 
-            </FrameLayout>
+                    <ImageView
+                        android:id="@+id/icon_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_10dp_small"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_physic_class"
+                        tools:ignore="ContentDescription" />
 
-        </com.google.android.material.card.MaterialCardView>
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/class_name"
+                style="@style/ClassesItemTitleStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp_medium"
+                android:text="@string/classes_hint"
+                app:layout_constraintStart_toEndOf="@id/class_icon"
+                app:layout_constraintTop_toTopOf="@id/class_icon" />
+
+            <TextView
+                android:id="@+id/class_time"
+                style="@style/ClassesItemTimeStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp_medium"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="@string/classes_time_hint"
+                app:drawableLeftCompat="@drawable/ic_time"
+                app:drawableTint="@color/item_classes_time_color"
+                app:layout_constraintBottom_toBottomOf="@id/class_icon"
+                app:layout_constraintStart_toStartOf="@id/class_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/skype_btn_background"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:background="@color/skype_button_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
 
         <TextView
-            android:id="@+id/class_name"
+            android:id="@+id/skype_btn_text"
+            style="@style/SkypeButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/classes_hint"
-            style="@style/ClassesItemTitleStyle"
-            app:layout_constraintTop_toTopOf="@id/class_icon"
-            app:layout_constraintStart_toEndOf="@id/class_icon"
-            android:layout_marginStart="@dimen/margin_16dp_medium"
-            />
-
-        <TextView
-            android:id="@+id/class_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_16dp_medium"
-            android:text="@string/classes_time_hint"
-            android:drawablePadding="4dp"
-            style="@style/ClassesItemTimeStyle"
-            app:layout_constraintBottom_toBottomOf="@id/class_icon"
-            app:layout_constraintStart_toStartOf="@id/class_name"
-            app:drawableLeftCompat="@drawable/ic_time"
-            app:drawableTint="@color/item_classes_time_color" />
+            android:layout_marginEnd="-12dp"
+            android:drawablePadding="@dimen/margin_4dp_small"
+            android:gravity="center"
+            android:rotation="90"
+            android:text="@string/skype_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            app:drawableEndCompat="@drawable/ic_skype"
+            app:drawableTint="@color/white" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

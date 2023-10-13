@@ -1,6 +1,7 @@
 package gb.com.educational_app.view.home
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import gb.com.educational_app.databinding.ItemHomeClassesBinding
@@ -23,6 +24,14 @@ class ClassesAdapter : RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() 
                 className.text = classes.className
                 classTime.text = classes.classTime
                 iconImage.setImageResource(getIconBasedOnClassName(classes.className))
+
+                if(classes.isOnline) {
+                    skypeBtnBackground.visibility = View.VISIBLE
+                    skypeBtnText.visibility = View.VISIBLE
+                } else {
+                    skypeBtnBackground.visibility = View.GONE
+                    skypeBtnText.visibility = View.GONE
+                }
             }
         }
     }
