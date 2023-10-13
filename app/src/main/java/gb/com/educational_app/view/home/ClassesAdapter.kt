@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import gb.com.educational_app.databinding.ItemHomeClassesBinding
 import gb.com.educational_app.model.datasource.Classes
 import gb.com.educational_app.utils.getIconBasedOnClassName
+import gb.com.educational_app.utils.openSkype
 
 class ClassesAdapter : RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() {
 
@@ -25,12 +26,23 @@ class ClassesAdapter : RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() 
                 classTime.text = classes.classTime
                 iconImage.setImageResource(getIconBasedOnClassName(classes.className))
 
+                handleSkypeButton(classes, binding)
+
+            }
+        }
+
+        private fun handleSkypeButton(classes: Classes, binding: ItemHomeClassesBinding) {
+            with(binding) {
                 if(classes.isOnline) {
                     skypeBtnBackground.visibility = View.VISIBLE
                     skypeBtnText.visibility = View.VISIBLE
                 } else {
                     skypeBtnBackground.visibility = View.GONE
                     skypeBtnText.visibility = View.GONE
+                }
+
+                skypeBtnBackground.setOnClickListener {
+                    openSkype(binding)
                 }
             }
         }

@@ -1,9 +1,11 @@
 package gb.com.educational_app.utils
 
+import android.content.Intent
+import android.widget.Toast
+import androidx.viewbinding.ViewBinding
 import gb.com.educational_app.R
 import gb.com.educational_app.model.datasource.Classes
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
+import java.util.Calendar
 
 fun getIconBasedOnClassName(className: String): Int {
     return when(className) {
@@ -18,19 +20,50 @@ fun getIconBasedOnClassName(className: String): Int {
 }
 
 fun findCurrentClassPosition(classesList: List<Classes>): Int {
-    val currentTime = LocalTime.now()
+    val currentTime = Calendar.getInstance()
     var nextClassIndex = -1
     for((index, classes) in classesList.withIndex()){
         val(startTimeStr, endTimeStr) = classes.classTime.split("-")
-        val timeFormat = DateTimeFormatter.ofPattern("H.mm")
-        val startTime = LocalTime.parse(startTimeStr.trim(), timeFormat)
-        val endTime = LocalTime.parse(endTimeStr.trim(), timeFormat)
 
-        if (currentTime.isAfter(startTime) && currentTime.isBefore(endTime)) {
+        val startTime = parseTime(startTimeStr)
+        val endTime = parseTime(endTimeStr)
+
+        if (currentTime.after(startTime) && currentTime.before(endTime)) {
             return index
-        } else if (currentTime.isBefore(startTime) && nextClassIndex == -1) {
+        } else if (currentTime.before(startTime) && nextClassIndex == -1) {
             nextClassIndex = index
         }
     }
     return nextClassIndex
+}
+
+fun parseTime(timeStr: String): Calendar {
+    val parts = timeStr.trim().split(".")
+    val hours = parts[0].toInt()
+    val minutes = parts[1].toInt()
+
+    return Calendar.getInstance().apply {
+        set(Calendar.HOUR_OF_DAY, hours)
+        set(Calendar.MINUTE, minutes)
+        set(Calendar.SECOND, 0)
+        set(Calendar.MILLISECOND, 0)
+    }
+}
+
+fun openSkype(binding: ViewBinding) {
+    val skypePackageName = "com.skype.raider"
+
+    val skypeIntent = Intent(Intent.ACTION_MAIN).apply {
+        addCategory(Intent.CATEGORY_LAUNCHER)
+        setPackage(skypePackageName)
+    }
+
+    val context = binding.root.context
+
+    if(skypeIntent.resolveActivity(context.packageManager) != null) {
+        context.startActivity(skypeIntent)
+    } else {
+        Toast.makeText(context,
+            "Skype is not installed", Toast.LENGTH_SHORT).show()
+    }
 }

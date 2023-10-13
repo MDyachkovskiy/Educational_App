@@ -19,7 +19,7 @@ object ClassesMockData {
         ),
         Classes(
             "Chemistry",
-        "12.00-12.45",
+        "17.00-17.45",
             "Mrs. Curie",
         "Students, I kindly request that you prepare thoroughly " +
                 "for the new topic in the lesson - Radioactivity",

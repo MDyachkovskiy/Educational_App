@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
 import gb.com.educational_app.R
 import gb.com.educational_app.databinding.ItemClassesBinding
 import gb.com.educational_app.databinding.ItemFirstClassesBinding
@@ -16,6 +17,7 @@ import gb.com.educational_app.databinding.ItemLastClassesBinding
 import gb.com.educational_app.model.datasource.Classes
 import gb.com.educational_app.utils.findCurrentClassPosition
 import gb.com.educational_app.utils.getIconBasedOnClassName
+import gb.com.educational_app.utils.openSkype
 
 class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -32,24 +34,75 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun getItemViewType(position: Int): Int {
-        return when(position) {
+        return when (position) {
             0 -> VIEW_TYPE_FIRST
             classesList.size - 1 -> VIEW_TYPE_LAST
             else -> VIEW_TYPE_MIDDLE
         }
     }
 
+    interface BindingSetup {
+        val className: TextView
+        val teacherName: TextView
+        val classIconImage: ImageView
+        val classesTime: TextView
+        val classesDescription: TextView
+        val gradientBackground: FrameLayout
+        val outerCircle: View
+        val innerCircle: View
+        val teacherTitle: TextView
+        val skypeBtnBackground: View
+        val skypeBtnText: TextView
+    }
+
+    fun ItemFirstClassesBinding.toBindingSetup() = object : BindingSetup {
+        override val className: TextView get() = this@toBindingSetup.className
+        override val teacherName: TextView get() = this@toBindingSetup.teacherName
+        override val classIconImage: ImageView get() = this@toBindingSetup.classIconImage
+        override val classesTime: TextView get() = this@toBindingSetup.classesTime
+        override val classesDescription: TextView get() = this@toBindingSetup.classesDescription
+        override val gradientBackground: FrameLayout get() = this@toBindingSetup.gradientBackground
+        override val outerCircle: View get() = this@toBindingSetup.outerCircle
+        override val innerCircle: View get() = this@toBindingSetup.innerCircle
+        override val teacherTitle: TextView get() = this@toBindingSetup.teacherTitle
+        override val skypeBtnBackground: View get() = this@toBindingSetup.skypeBtnBackground
+        override val skypeBtnText: TextView get() = this@toBindingSetup.skypeBtnText
+
+    }
+
+    fun ItemClassesBinding.toBindingSetup() = object : BindingSetup {
+        override val className: TextView get() = this@toBindingSetup.className
+        override val teacherName: TextView get() = this@toBindingSetup.teacherName
+        override val classIconImage: ImageView get() = this@toBindingSetup.classIconImage
+        override val classesTime: TextView get() = this@toBindingSetup.classesTime
+        override val classesDescription: TextView get() = this@toBindingSetup.classesDescription
+        override val gradientBackground: FrameLayout get() = this@toBindingSetup.gradientBackground
+        override val outerCircle: View get() = this@toBindingSetup.outerCircle
+        override val innerCircle: View get() = this@toBindingSetup.innerCircle
+        override val teacherTitle: TextView get() = this@toBindingSetup.teacherTitle
+        override val skypeBtnBackground: View get() = this@toBindingSetup.skypeBtnBackground
+        override val skypeBtnText: TextView get() = this@toBindingSetup.skypeBtnText
+    }
+
+    fun ItemLastClassesBinding.toBindingSetup() = object : BindingSetup {
+        override val className: TextView get() = this@toBindingSetup.className
+        override val teacherName: TextView get() = this@toBindingSetup.teacherName
+        override val classIconImage: ImageView get() = this@toBindingSetup.classIconImage
+        override val classesTime: TextView get() = this@toBindingSetup.classesTime
+        override val classesDescription: TextView get() = this@toBindingSetup.classesDescription
+        override val gradientBackground: FrameLayout get() = this@toBindingSetup.gradientBackground
+        override val outerCircle: View get() = this@toBindingSetup.outerCircle
+        override val innerCircle: View get() = this@toBindingSetup.innerCircle
+        override val teacherTitle: TextView get() = this@toBindingSetup.teacherTitle
+        override val skypeBtnBackground: View get() = this@toBindingSetup.skypeBtnBackground
+        override val skypeBtnText: TextView get() = this@toBindingSetup.skypeBtnText
+    }
+
     class FirstClassesViewHolder(
         private val binding: ItemFirstClassesBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(classes: Classes, adapter: ClassesFragmentAdapter, isCurrentClass: Boolean) {
-            adapter.bindGeneralInfo(
-                binding.className, binding.teacherName,
-                binding.classIconImage, binding.classesTime, binding.classesDescription,
-                binding.gradientBackground, itemView, binding.outerCircle,
-                binding.innerCircle, binding.teacherTitle, binding.skypeBtnBackground,
-                binding.skypeBtnText, classes, isCurrentClass
-            )
+            adapter.bindGeneralInfo(binding, classes, isCurrentClass)
         }
     }
 
@@ -57,13 +110,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val binding: ItemClassesBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(classes: Classes, adapter: ClassesFragmentAdapter, isCurrentClass: Boolean) {
-            adapter.bindGeneralInfo(
-                binding.className, binding.teacherName,
-                binding.classIconImage, binding.classesTime, binding.classesDescription,
-                binding.gradientBackground, itemView, binding.outerCircle,
-                binding.innerCircle, binding.teacherTitle, binding.skypeBtnBackground,
-                binding.skypeBtnText, classes, isCurrentClass
-            )
+            adapter.bindGeneralInfo(binding, classes, isCurrentClass)
         }
     }
 
@@ -71,60 +118,58 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         private val binding: ItemLastClassesBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(classes: Classes, adapter: ClassesFragmentAdapter, isCurrentClass: Boolean) {
-            adapter.bindGeneralInfo(
-                binding.className, binding.teacherName,
-                binding.classIconImage, binding.classesTime, binding.classesDescription,
-                binding.gradientBackground, itemView, binding.outerCircle,
-                binding.innerCircle, binding.teacherTitle, binding.skypeBtnBackground,
-                binding.skypeBtnText, classes, isCurrentClass
-            )
+            adapter.bindGeneralInfo(binding, classes, isCurrentClass)
         }
     }
 
     private fun bindGeneralInfo(
-        classNameTextView: TextView,
-        teacherNameTextView: TextView,
-        classIconImageView: ImageView,
-        classesTime: TextView,
-        classesDescription: TextView,
-        gradientBackground: FrameLayout,
-        itemView: View,
-        outerCircle: View,
-        innerCircle:View,
-        teacherTitleTextView: TextView,
-        skypeBtnBackground: View,
-        skypeText: TextView,
+        binding: ViewBinding,
         classes: Classes,
         isCurrentClass: Boolean
     ) {
-        classNameTextView.text = classes.className
-        teacherNameTextView.text = classes.teacher
-        classesTime.text = classes.classTime
-        classIconImageView.setImageResource(getIconBasedOnClassName(classes.className))
-
-        handleUiDesign(outerCircle, innerCircle, isCurrentClass, itemView)
-        handleSkypeButton(skypeBtnBackground, skypeText, classes)
-
-        if (classes.comments.isNullOrEmpty()) {
-            classesDescription.visibility = View.GONE
-        } else {
-            classesDescription.visibility = View.VISIBLE
-            classesDescription.text = classes.comments
+        val setup = when (binding) {
+            is ItemFirstClassesBinding -> binding.toBindingSetup()
+            is ItemClassesBinding -> binding.toBindingSetup()
+            is ItemLastClassesBinding -> binding.toBindingSetup()
+            else -> throw IllegalArgumentException("Unknown binding class")
         }
 
-        updateUiForFacultativeClass(
-            classes.isFacultative, gradientBackground, itemView,
-            teacherTitleTextView, teacherNameTextView, classesDescription
-        )
+        with(setup) {
+            className.text = classes.className
+            teacherName.text = classes.teacher
+            classesTime.text = classes.classTime
+            classIconImage.setImageResource(getIconBasedOnClassName(classes.className))
+
+            handleUiDesign(outerCircle, innerCircle, isCurrentClass, binding.root)
+            handleSkypeButton(skypeBtnBackground, skypeBtnText, classes, binding)
+
+            if (classes.comments.isNullOrEmpty()) {
+                classesDescription.visibility = View.GONE
+            } else {
+                classesDescription.visibility = View.VISIBLE
+                classesDescription.text = classes.comments
+            }
+
+            updateUiForFacultativeClass(
+                classes.isFacultative, gradientBackground, binding.root,
+                teacherTitle, teacherName, classesDescription
+            )
+        }
     }
 
-    private fun handleSkypeButton(skypeBtnBackground: View, skypeText: TextView, classes: Classes) {
-        if(classes.isOnline) {
+    private fun handleSkypeButton(
+        skypeBtnBackground: View, skypeText: TextView, classes: Classes, binding: ViewBinding
+    ) {
+        if (classes.isOnline) {
             skypeBtnBackground.visibility = View.VISIBLE
             skypeText.visibility = View.VISIBLE
         } else {
             skypeBtnBackground.visibility = View.GONE
             skypeText.visibility = View.GONE
+        }
+
+        skypeBtnBackground.setOnClickListener {
+            openSkype(binding)
         }
     }
 
@@ -132,7 +177,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         outerCircle: View, innerCircle: View, isCurrentClass: Boolean, itemView: View
     ) {
         outerCircle.visibility = if (isCurrentClass) View.VISIBLE else View.GONE
-        if(isCurrentClass) {
+        if (isCurrentClass) {
             innerCircle.backgroundTintList = ColorStateList.valueOf(
                 ContextCompat.getColor(itemView.context, R.color.white)
             )
@@ -154,16 +199,21 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return when(viewType) {
+        return when (viewType) {
             VIEW_TYPE_FIRST -> FirstClassesViewHolder(
                 ItemFirstClassesBinding
-                    .inflate(LayoutInflater.from(parent.context), parent, false))
+                    .inflate(LayoutInflater.from(parent.context), parent, false)
+            )
+
             VIEW_TYPE_MIDDLE -> MiddleClassesViewHolder(
                 ItemClassesBinding
-                    .inflate(LayoutInflater.from(parent.context), parent, false))
+                    .inflate(LayoutInflater.from(parent.context), parent, false)
+            )
+
             else -> LastClassesViewHolder(
                 ItemLastClassesBinding
-                    .inflate(LayoutInflater.from(parent.context), parent, false))
+                    .inflate(LayoutInflater.from(parent.context), parent, false)
+            )
         }
     }
 
@@ -171,7 +221,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val isCurrentClass = position == findCurrentClassPosition(classesList)
-        when(holder) {
+        when (holder) {
             is FirstClassesViewHolder -> holder.bind(classesList[position], this, isCurrentClass)
             is MiddleClassesViewHolder -> holder.bind(classesList[position], this, isCurrentClass)
             is LastClassesViewHolder -> holder.bind(classesList[position], this, isCurrentClass)
