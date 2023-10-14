@@ -6,8 +6,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://i.ibb.co.com/X363M0t/IMG-20231014-145806.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/X363M0t/IMG-20231014-145806.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/qnFPwYG/IMG-20231004-013552.jpg" alt="project-screenshot" width="200" height="400/"> 
-<img src="https://i.ibb.co.com/tM2mKb4/IMG-20231014-145727.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/Bqvh6J2/IMG-20231014-145657.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/9qpp8VX/IMG-20230924-194501.jpg" alt="project-screenshot" width="200" height="400/">
+<img src="https://i.ibb.co.com/X363M0t/IMG-20231014-145806.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/jkQqFQx/IMG-20231014-145749.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/tM2mKb4/IMG-20231014-145727.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/Bqvh6J2/IMG-20231014-145657.jpg" alt="project-screenshot" width="200" height="400/">
 
   
   
