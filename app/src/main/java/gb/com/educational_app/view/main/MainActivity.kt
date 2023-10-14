@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initNavigationMenu() {
         binding.navView.setOnItemSelectedListener {menuItem ->
-            val fragment = when(menuItem.itemId) {
+            val fragment = when(menuItem) {
                 R.id.navigation_home -> HomeFragment.newInstance()
                 R.id.navigation_classes -> ClassesFragment.newInstance()
                 R.id.navigation_progress -> ProgressFragment.newInstance()
@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
                 true
             } ?: false
         }
+        binding.navView.setItemSelected(R.id.navigation_home, true)
     }
 
     private fun replaceFragment(fragment: Fragment) {

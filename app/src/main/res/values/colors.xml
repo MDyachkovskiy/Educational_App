@@ -10,5 +10,6 @@
     <color name="attention_red_color_text">#B12A46</color>
     <color name="skype_button_color">#4ECFF7</color>
     <color name="classes_icon_transparent_background">#1AFFFFFF</color>
-
+    <color name="nav_menu_selected_color">#35EF89</color>
+    <color name="nav_menu_selected_color_background">#2635EF89</color>
 </resources>

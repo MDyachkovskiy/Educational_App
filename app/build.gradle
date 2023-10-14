@@ -49,4 +49,7 @@ dependencies {
     implementation 'io.insert-koin:koin-core:3.4.2'
     implementation 'io.insert-koin:koin-androidx-navigation:3.4.0'
     implementation 'io.insert-koin:koin-androidx-compose:3.4.0'
+
+    //BottomNavigationBar
+    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
 }
