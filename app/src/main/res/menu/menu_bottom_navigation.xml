@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
         android:title="@string/bot_nav_home"
+        app:cnb_iconColor="@color/nav_menu_selected_color"
+        app:cnb_textColor="@color/nav_menu_selected_color"
+        app:cnb_backgroundColor="@color/nav_menu_selected_color_background"
         />
 
     <item
         android:id="@+id/navigation_classes"
         android:icon="@drawable/ic_classes"
         android:title="@string/bot_nav_classes"
+        app:cnb_iconColor="@color/nav_menu_selected_color"
+        app:cnb_textColor="@color/nav_menu_selected_color"
+        app:cnb_backgroundColor="@color/nav_menu_selected_color_background"
         />
 
     <item
         android:id="@+id/navigation_progress"
         android:icon="@drawable/ic_progress"
         android:title="@string/bot_nav_progress"
+        app:cnb_iconColor="@color/nav_menu_selected_color"
+        app:cnb_textColor="@color/nav_menu_selected_color"
+        app:cnb_backgroundColor="@color/nav_menu_selected_color_background"
         />
 
     <item
         android:id="@+id/navigation_favorite"
         android:icon="@drawable/ic_favorite"
         android:title="@string/bot_nav_favorite"
+        app:cnb_iconColor="@color/nav_menu_selected_color"
+        app:cnb_textColor="@color/nav_menu_selected_color"
+        app:cnb_backgroundColor="@color/nav_menu_selected_color_background"
         />
 
 </menu>

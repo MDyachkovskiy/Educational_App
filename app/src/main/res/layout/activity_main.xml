@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.main.MainActivity"
+    android:background="@color/app_background">
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,13 +17,17 @@
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:cnb_orientationMode="horizontal"
+        app:cnb_iconSize="30dp"
+        app:cnb_unselectedColor="@color/white"
+        android:background="@drawable/background_bottom_navigation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/menu_bottom_navigation"/>
+        app:cnb_menuResource="@menu/menu_bottom_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
