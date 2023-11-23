@@ -30,20 +30,9 @@
     <dimen name="material_card_corner_radius_35dp">35dp</dimen>
     <dimen name="material_card_corner_radius_50dp">50dp</dimen>
 
-    //Home Fragment
-    <dimen name="toolbar_icon_height">30dp</dimen>
-    <dimen name="toolbar_avatar_icon_height">50dp</dimen>
-    <dimen name="homework_item_width">270dp</dimen>
-    <dimen name="homework_icon_height">60dp</dimen>
-    <dimen name="additional_icon_height">40dp</dimen>
-    <dimen name="exam_countdown_timer_height">180dp</dimen>
-    <dimen name="home_classes_icon_height">55dp</dimen>
-
     //Classes Fragment
     <dimen name="classes_icon_height">50dp</dimen>
 
-    //Countdown
-    <dimen name="clock_window_height">50dp</dimen>
-    <dimen name="clock_window_width">35dp</dimen>
+
 
 </resources>
