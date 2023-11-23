@@ -1,10 +1,10 @@
-package gb.com.educational_app.utils
+package com.test.application.core.utils
 
 import android.content.Intent
 import android.widget.Toast
 import androidx.viewbinding.ViewBinding
 import gb.com.educational_app.R
-import gb.com.educational_app.model.datasource.Classes
+import com.test.application.core.domain.Classes
 import java.util.Calendar
 
 fun getIconBasedOnClassName(className: String): Int {
@@ -19,7 +19,7 @@ fun getIconBasedOnClassName(className: String): Int {
     }
 }
 
-fun findCurrentClassPosition(classesList: List<Classes>): Int {
+fun findCurrentClassPosition(classesList: List<com.test.application.core.domain.Classes>): Int {
     val currentTime = Calendar.getInstance()
     var nextClassIndex = -1
     for((index, classes) in classesList.withIndex()){

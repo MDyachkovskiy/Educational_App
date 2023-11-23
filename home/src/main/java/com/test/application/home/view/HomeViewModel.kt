@@ -4,18 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import gb.com.educational_app.model.datasource.Classes
-import gb.com.educational_app.model.datasource.ExamTime
-import gb.com.educational_app.model.datasource.Homework
-import gb.com.educational_app.model.repository.ClassesRepository
-import gb.com.educational_app.model.repository.ExamRepository
-import gb.com.educational_app.model.repository.HomeworkRepository
+import com.test.application.core.domain.Classes
+import com.test.application.core.domain.ExamTime
+import com.test.application.core.domain.Homework
+import com.test.application.core.interactor.HomeScreenInteractor
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    private val examRepository: ExamRepository,
-    private val classesRepository: ClassesRepository,
-    private val homeworkRepository: HomeworkRepository
+    private val interactor: HomeScreenInteractor,
 ) : ViewModel() {
 
     private val _examTime = MutableLiveData<ExamTime>()
@@ -35,19 +31,19 @@ class HomeViewModel(
 
     private fun getExamTime() {
         viewModelScope.launch {
-            _examTime.postValue(examRepository.getExamTime())
+            _examTime.postValue(interactor.getExamTime())
         }
     }
 
     private fun loadClasses() {
         viewModelScope.launch {
-            _classes.postValue(classesRepository.getClasses())
+            _classes.postValue(interactor.getClasses())
         }
     }
 
     private fun loadHomework() {
         viewModelScope.launch {
-            _homework.postValue(homeworkRepository.getHomeworks())
+            _homework.postValue(interactor.getHomeworks())
         }
     }
 }

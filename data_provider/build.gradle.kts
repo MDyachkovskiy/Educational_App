@@ -1,23 +1,25 @@
 plugins {
-    id ("com.android.library")
-    id ("org.jetbrains.kotlin.android")
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.test.application.home"
+    namespace = "com.test.application.data_provider"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -28,25 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
-
-    implementation (project(":core"))
-
     //Kotlin
     implementation ("androidx.core:core-ktx:1.8.0")
 
     //AndroidX
     implementation ("androidx.appcompat:appcompat:1.6.1")
-
-    //Koin
-    implementation ("io.insert-koin:koin-android:3.4.2")
-
-    //Design
-    implementation ("com.google.android.material:material:1.5.0")
-    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
 }

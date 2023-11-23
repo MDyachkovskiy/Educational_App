@@ -32,6 +32,8 @@ android {
 
 dependencies {
 
+    implementation (project(":data_provider"))
+
     //Kotlin
     implementation ("androidx.core:core-ktx:1.8.0")
 

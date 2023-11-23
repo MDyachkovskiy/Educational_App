@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import gb.com.educational_app.R
-import gb.com.educational_app.databinding.ItemHomeworkBinding
-import gb.com.educational_app.model.datasource.Homework
-import gb.com.educational_app.utils.getIconBasedOnClassName
+import com.test.application.core.domain.Homework
+import com.test.application.core.utils.getIconBasedOnClassName
+import com.test.application.home.R
+import com.test.application.home.databinding.ItemHomeworkBinding
 import java.util.Calendar
 import java.util.concurrent.TimeUnit
 
@@ -42,13 +42,15 @@ class HomeworksAdapter : RecyclerView.Adapter<HomeworksAdapter.HomeworkViewHolde
 
             if(daysLeft <= 2) {
                 binding.remainTime.setTextColor(
-                    ContextCompat.getColor(itemView.context, R.color.attention_red_color_text)
+                    ContextCompat.getColor(itemView.context,
+                        com.test.application.core.R.color.attention_red_color_text)
                 )
 
                 val redDrawable = ContextCompat
                     .getDrawable(itemView.context, R.drawable.ic_time)?.mutate()
                 redDrawable?.colorFilter = PorterDuffColorFilter(
-                    ContextCompat.getColor(itemView.context, R.color.attention_red_color_text),
+                    ContextCompat.getColor(itemView.context,
+                        com.test.application.core.R.color.attention_red_color_text),
                         PorterDuff.Mode.SRC_IN
                     )
                 binding

@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import gb.com.educational_app.databinding.ItemHomeClassesBinding
-import gb.com.educational_app.model.datasource.Classes
-import gb.com.educational_app.utils.getIconBasedOnClassName
-import gb.com.educational_app.utils.openSkype
+import com.test.application.core.domain.Classes
+import com.test.application.core.utils.getIconBasedOnClassName
+import com.test.application.core.utils.openSkype
+import com.test.application.home.databinding.ItemHomeClassesBinding
 
 class ClassesAdapter : RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() {
 

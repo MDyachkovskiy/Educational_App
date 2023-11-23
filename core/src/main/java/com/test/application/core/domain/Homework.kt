@@ -1,4 +1,4 @@
-package gb.com.educational_app.model.datasource
+package com.test.application.core.domain
 
 import java.util.Calendar
 

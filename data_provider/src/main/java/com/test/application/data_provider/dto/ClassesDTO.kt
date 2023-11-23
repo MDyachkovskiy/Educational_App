@@ -1,6 +1,6 @@
-package gb.com.educational_app.model.datasource
+package com.test.application.data_provider.dto
 
-data class Classes(
+data class ClassesDTO(
     val className: String,
     val classTime: String,
     val teacher: String,

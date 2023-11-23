@@ -38,6 +38,13 @@ android {
 }
 
 dependencies {
+
+    implementation (project(":home"))
+    implementation (project(":core"))
+    implementation (project(":classes"))
+    implementation (project(":favorites"))
+    implementation (project(":progress"))
+    implementation (project(":data_provider"))
     //Kotlin
     implementation ("androidx.core:core-ktx:1.8.0")
 
