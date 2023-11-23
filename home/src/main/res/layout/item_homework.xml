@@ -94,7 +94,6 @@
             >
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/first_additional_icon"
                 android:layout_width="@dimen/additional_icon_height"
                 android:layout_height="@dimen/additional_icon_height"
                 app:layout_constraintDimensionRatio="1:1"
@@ -104,7 +103,6 @@
                 >
 
                 <ImageView
-                    android:id="@+id/first_icon"
                     android:layout_margin="@dimen/margin_10dp_small"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -115,7 +113,6 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/second_additional_icon"
                 android:layout_width="@dimen/additional_icon_height"
                 android:layout_height="@dimen/additional_icon_height"
                 android:elevation="@dimen/elevation_10dp_small"
@@ -127,7 +124,6 @@
                 >
 
                 <ImageView
-                    android:id="@+id/second_icon"
                     android:layout_margin="@dimen/margin_10dp_small"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

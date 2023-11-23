@@ -207,7 +207,6 @@
         app:layout_constraintGuide_percent="0.15" />
 
     <View
-        android:id="@+id/bottom_line"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="@drawable/background_gradient"
@@ -217,7 +216,6 @@
         app:layout_constraintTop_toBottomOf="@id/inner_circle" />
 
     <View
-        android:id="@+id/upper_line"
         android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="@drawable/background_gradient"

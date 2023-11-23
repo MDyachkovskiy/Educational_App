@@ -27,7 +27,6 @@ class ClassesAdapter : RecyclerView.Adapter<ClassesAdapter.ClassesViewHolder>() 
                 iconImage.setImageResource(getIconBasedOnClassName(classes.className))
 
                 handleSkypeButton(classes, binding)
-
             }
         }
 

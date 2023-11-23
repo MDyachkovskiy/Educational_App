@@ -4,7 +4,6 @@ import com.test.application.core.domain.Classes
 import com.test.application.core.domain.Homework
 import com.test.application.data_provider.dto.ClassesDTO
 import com.test.application.data_provider.dto.HomeworkDTO
-import java.util.Calendar
 
 fun ClassesDTO.toDomain(): Classes {
     return Classes(

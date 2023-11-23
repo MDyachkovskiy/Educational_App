@@ -6,6 +6,7 @@
     android:background="@color/app_background">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/exam_countdown"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/margin_32dp_large"
@@ -39,7 +40,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/timer_block"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:baselineAligned="false"
