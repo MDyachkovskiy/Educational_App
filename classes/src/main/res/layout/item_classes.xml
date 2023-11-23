@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.8"/>
+                    app:layout_constraintGuide_percent="0.8" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -133,8 +133,7 @@
                 android:background="@color/skype_button_color"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/skype_btn_text"
@@ -206,7 +205,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15" />
-
 
     <View
         android:id="@+id/bottom_line"

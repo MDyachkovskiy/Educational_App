@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.8"/>
+                    app:layout_constraintGuide_percent="0.8" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -130,10 +130,10 @@
                 android:layout_width="60dp"
                 android:layout_height="0dp"
                 android:background="@color/skype_button_color"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:visibility="gone"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/skype_btn_text"
@@ -145,12 +145,12 @@
                 android:gravity="center"
                 android:rotation="90"
                 android:text="@string/skype_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
                 app:drawableEndCompat="@drawable/ic_skype"
                 app:drawableTint="@color/white"
-                android:visibility="gone"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

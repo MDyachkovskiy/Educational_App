@@ -20,7 +20,7 @@
     <string name="classes_count_hint">6 classes today</string>
     <string name="classes_count">%d classes today</string>
     <string name="remain_time">%d days left</string>
-    <string name="classes_teacher">Teacher:</string>
-    <string name="classes_teacher_hint">Mrs. Barros</string>
+
+
 
 </resources>

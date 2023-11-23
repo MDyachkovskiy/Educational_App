@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import gb.com.educational_app.databinding.FragmentClassesBinding
-import gb.com.educational_app.model.datasource.Classes
+import com.test.application.classes.databinding.FragmentClassesBinding
+import com.test.application.core.domain.Classes
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

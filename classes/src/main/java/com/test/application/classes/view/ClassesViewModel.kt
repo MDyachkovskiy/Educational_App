@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import gb.com.educational_app.model.datasource.Classes
-import gb.com.educational_app.model.repository.ClassesRepository
+import com.test.application.core.domain.Classes
+import com.test.application.core.interactor.ClassesScreenInteractor
 import kotlinx.coroutines.launch
 
 class ClassesViewModel(
-    private val classesRepository: ClassesRepository
+    private val interactor: ClassesScreenInteractor
 ) : ViewModel() {
 
     private val _classes = MutableLiveData<List<Classes>>()
@@ -17,7 +17,7 @@ class ClassesViewModel(
 
     fun loadClasses() {
         viewModelScope.launch {
-            _classes.postValue(classesRepository.getClasses())
+            _classes.postValue(interactor.getClasses())
         }
     }
 }

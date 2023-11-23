@@ -11,6 +11,7 @@ android {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -36,7 +37,7 @@ android {
 dependencies {
 
     //Kotlin
-    implementation ("androidx.core:core-ktx:1.8.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
 
     //AndroidX
     implementation ("androidx.appcompat:appcompat:1.6.1")

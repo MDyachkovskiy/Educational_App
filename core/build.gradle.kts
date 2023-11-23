@@ -11,6 +11,7 @@ android {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -28,6 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -35,7 +39,7 @@ dependencies {
     implementation (project(":data_provider"))
 
     //Kotlin
-    implementation ("androidx.core:core-ktx:1.8.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
 
     //AndroidX
     implementation ("androidx.appcompat:appcompat:1.6.1")

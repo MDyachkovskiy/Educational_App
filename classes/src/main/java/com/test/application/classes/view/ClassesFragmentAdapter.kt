@@ -10,14 +10,14 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import gb.com.educational_app.R
-import gb.com.educational_app.databinding.ItemClassesBinding
-import gb.com.educational_app.databinding.ItemFirstClassesBinding
-import gb.com.educational_app.databinding.ItemLastClassesBinding
-import gb.com.educational_app.model.datasource.Classes
-import gb.com.educational_app.utils.findCurrentClassPosition
-import gb.com.educational_app.utils.getIconBasedOnClassName
-import gb.com.educational_app.utils.openSkype
+import com.test.application.classes.databinding.ItemClassesBinding
+import com.test.application.classes.databinding.ItemFirstClassesBinding
+import com.test.application.classes.databinding.ItemLastClassesBinding
+import com.test.application.core.domain.Classes
+import com.test.application.core.utils.findCurrentClassPosition
+import com.test.application.core.utils.getIconBasedOnClassName
+import com.test.application.core.utils.openSkype
+
 
 class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -179,7 +179,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         outerCircle.visibility = if (isCurrentClass) View.VISIBLE else View.GONE
         if (isCurrentClass) {
             innerCircle.backgroundTintList = ColorStateList.valueOf(
-                ContextCompat.getColor(itemView.context, R.color.white)
+                ContextCompat.getColor(itemView.context, com.test.application.core.R.color.white)
             )
         }
     }
@@ -193,7 +193,7 @@ class ClassesFragmentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         if (isFacultative) {
             gradientBackground.visibility = View.VISIBLE
 
-            val color = ContextCompat.getColor(itemView.context, R.color.white)
+            val color = ContextCompat.getColor(itemView.context, com.test.application.core.R.color.white)
             textViews.forEach { it.setTextColor(color) }
         }
     }

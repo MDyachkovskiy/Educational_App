@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
     private fun initNavigationMenu() {
         binding.navView.setOnItemSelectedListener {menuItem ->
             val fragment = when(menuItem) {
-                R.id.navigation_home -> com.test.application.home.view.HomeFragment.newInstance()
-                R.id.navigation_classes -> com.test.application.classes.view.ClassesFragment.newInstance()
-                R.id.navigation_progress -> com.test.application.progress.view.ProgressFragment.newInstance()
-                R.id.navigation_favorite -> com.test.application.favorites.view.FavoritesFragment.newInstance()
+                R.id.navigation_home -> HomeFragment.newInstance()
+                R.id.navigation_classes -> ClassesFragment.newInstance()
+                R.id.navigation_progress -> ProgressFragment.newInstance()
+                R.id.navigation_favorite -> FavoritesFragment.newInstance()
                 else -> null
             }
             fragment?.let {
@@ -47,13 +47,13 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.main_container, fragment)
-            .commitNow()
+            .commit()
     }
 
     private fun initHomeFragment() {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.main_container, com.test.application.home.view.HomeFragment.newInstance())
-            .commitNow()
+            .replace(R.id.main_container, HomeFragment.newInstance())
+            .commit()
     }
 }

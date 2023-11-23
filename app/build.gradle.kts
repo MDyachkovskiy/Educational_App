@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "gb.com.educational_app"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "gb.com.educational_app"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -46,7 +46,7 @@ dependencies {
     implementation (project(":progress"))
     implementation (project(":data_provider"))
     //Kotlin
-    implementation ("androidx.core:core-ktx:1.8.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
 
     //AndroidX
     implementation ("androidx.appcompat:appcompat:1.6.1")

@@ -34,7 +34,7 @@ android {
 
 dependencies {
     //Kotlin
-    implementation ("androidx.core:core-ktx:1.8.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
 
     //AndroidX
     implementation ("androidx.appcompat:appcompat:1.6.1")

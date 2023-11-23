@@ -11,6 +11,7 @@ android {
         minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -38,7 +39,7 @@ dependencies {
     implementation (project(":core"))
 
     //Kotlin
-    implementation ("androidx.core:core-ktx:1.8.0")
+    implementation ("androidx.core:core-ktx:1.12.0")
 
     //AndroidX
     implementation ("androidx.appcompat:appcompat:1.6.1")
@@ -47,6 +48,6 @@ dependencies {
     implementation ("io.insert-koin:koin-android:3.4.2")
 
     //Design
-    implementation ("com.google.android.material:material:1.5.0")
+    implementation ("com.google.android.material:material:1.10.0")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
 }

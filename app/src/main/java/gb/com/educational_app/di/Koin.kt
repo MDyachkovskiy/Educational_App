@@ -10,6 +10,8 @@ import com.test.application.classes.view.ClassesViewModel
 import com.test.application.core.domain.Classes
 import com.test.application.core.domain.ExamTime
 import com.test.application.core.domain.Homework
+import com.test.application.core.interactor.ClassesScreenInteractor
+import com.test.application.core.interactor.ClassesScreenInteractorImpl
 import com.test.application.core.interactor.HomeScreenInteractor
 import com.test.application.core.interactor.HomeScreenInteractorImpl
 import com.test.application.home.view.HomeViewModel
@@ -24,6 +26,7 @@ val appModule = module {
 
 val interactorModule = module {
     single<HomeScreenInteractor> { HomeScreenInteractorImpl(get(), get(), get()) }
+    single<ClassesScreenInteractor> { ClassesScreenInteractorImpl( get()) }
 }
 
 val viewModelModule = module {
