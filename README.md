@@ -6,9 +6,11 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://i.ibb.co.com/X363M0t/IMG-20231014-145806.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/jkQqFQx/IMG-20231014-145749.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/tM2mKb4/IMG-20231014-145727.jpg" alt="project-screenshot" width="200" height="400/"> <img src="https://i.ibb.co.com/Bqvh6J2/IMG-20231014-145657.jpg" alt="project-screenshot" width="200" height="400/">
+<img src="https://gdurl.com/1IQt" alt="project-screenshot" width="200" height="400/"> <img src="https://gdurl.com/JoDkS" alt="project-screenshot" width="200" height="400/"> 
 
-  
+<h2>Application Demo Video:</h2>
+
+<p>Watch a demo of the application here: <a href="https://gdurl.com/coSP" target="_blank">Educational App Demo Video</a></p>
   
 <h2>💻 Built with</h2>
 
@@ -16,4 +18,6 @@ Within the scope of this educational course the following knowledge and technolo
 
 *   MVVM
 *   RecyclerView
+*   PagerSnapHelper
 *   ChipNavigationView
+*   Multimodular app
