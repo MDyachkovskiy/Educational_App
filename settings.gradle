@@ -15,3 +15,9 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Educational_App"
 include ':app'
+include ':core'
+include ':home'
+include ':classes'
+include ':progress'
+include ':favorites'
+include ':data_provider'

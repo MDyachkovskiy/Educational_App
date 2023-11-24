@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="classes_block_title">Classes</string>
+    <string name="classes_teacher">Teacher:</string>
+    <string name="classes_teacher_hint">Mrs. Barros</string>
+    <string name="classes_hint">History</string>
+    <string name="skype_button">Open in</string>
+    <string name="classes_time_hint">8:00–8:45</string>
+
+</resources>
