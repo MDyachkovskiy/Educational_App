@@ -43,4 +43,7 @@ dependencies {
 
     //AndroidX
     implementation ("androidx.appcompat:appcompat:1.6.1")
+
+    //Design
+    implementation ("com.google.android.material:material:1.10.0")
 }

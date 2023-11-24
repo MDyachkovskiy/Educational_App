@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.PagerSnapHelper
 import com.test.application.core.domain.Classes
 import com.test.application.core.domain.ExamTime
 import com.test.application.core.domain.Homework
@@ -50,8 +51,10 @@ class HomeFragment : Fragment() {
     private fun initHomeworksRecyclerView(homeworks: List<Homework>) {
         val adapter = HomeworksAdapter()
         adapter.homeworkList = homeworks
-        binding.homeworks.homeworkRecyclerView
         binding.homeworks.homeworkRecyclerView.adapter = adapter
+
+        val snapHelperHomework = PagerSnapHelper()
+        snapHelperHomework.attachToRecyclerView(binding.homeworks.homeworkRecyclerView)
     }
 
     private fun initClassesRecyclerView(classes: List<Classes>) {
@@ -59,6 +62,9 @@ class HomeFragment : Fragment() {
         val adapter = ClassesAdapter()
         adapter.classesList = classes
         binding.classes.classesRecyclerView.adapter = adapter
+
+        val snapHelperClasses = PagerSnapHelper()
+        snapHelperClasses.attachToRecyclerView(binding.classes.classesRecyclerView)
         val position = findCurrentClassPosition(classes)
         if (position != -1) {
             binding.classes.classesRecyclerView.scrollToPosition(position)
@@ -82,7 +88,7 @@ class HomeFragment : Fragment() {
 
                         tvHoursSecond.text = (hours / 10).toString()
                         tvHoursFirst.text = (hours % 10).toString()
-                        
+
                         tvMinutesSecond.text = (minutes / 10).toString()
                         tvMinutesFirst.text= (minutes % 10).toString()
                     }

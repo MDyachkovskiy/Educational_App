@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Градиент для эффекта свечения -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent"/>
+            <corners android:radius="25dp"/>
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp"/>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="200dp"
+                android:startColor="#8035EF89"
+                android:endColor="#00FFFFFF"/>
+        </shape>
+    </item>
+    <!-- Основной слой View -->
+    <item android:left="10dp" android:top="10dp" android:right="10dp" android:bottom="10dp">
+        <shape>
+            <solid android:color="#FF2B86E6"/>
+            <corners android:radius="25dp"/>
+        </shape>
+    </item>
+</layer-list>
